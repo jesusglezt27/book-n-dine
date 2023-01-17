@@ -24,6 +24,7 @@ const session = require("express-session");
 // ℹ️ MongoStore in order to save the user session in the database
 // https://www.npmjs.com/package/connect-mongo
 const MongoStore = require("connect-mongo");
+const { hasSubscribers } = require("diagnostics_channel");
 
 // Connects the mongo uri to maintain the same naming structure
 const MONGO_URI =
@@ -38,7 +39,7 @@ module.exports = (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
-
+  
   // Normalizes the path to the views folder
   app.set("views", path.join(__dirname, "..", "views"));
   // Sets the view engine to handlebars
