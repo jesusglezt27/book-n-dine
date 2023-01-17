@@ -1,24 +1,26 @@
+{{!-- views/auth/signup.hbs --}}
+
 <div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
+  <h2>Signup</h2>
+  <form action="/signup" method="POST">
 
     <label> Username
-      <input type="text" name="username" placeholder="Your username" />
+      <input type="text" name="username" placeholder="ironhacker" />
     </label>
 
     <label> Email
-      <input type="email" name="email" placeholder="Your email" />
+      <input type="email" name="email" placeholder="rockstar@gmail.com" />
     </label>
 
     <label> Password
-      <input type="password" name="password" placeholder="Your password" />
+      <input type="password" name="password" placeholder="********" />
     </label>
 
-    <button type="submit">Sign Up</button>
+    <button type="submit">Create account</button>
 
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
+    {{!-- error message will be added here --}}
+      {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
   </form>
 </div>

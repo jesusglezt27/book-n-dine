@@ -1,12 +1,11 @@
-// models/User.model.js
 const { Schema, model } = require('mongoose');
- 
-const userSchema = new Schema(
+
+const restaurantSchema = new Schema(
   {
-    username: {
+    name: {
       type: String,
       trim: true,
-      required: [true, 'Username is required.'],
+      required: [true, 'name is required.'],
       unique: true
     },
     email: {
@@ -18,14 +17,22 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
-    passwordHash: {
+    owner:{
       type: String,
-      required: [true, 'Password is required.']
-    }
+      required: [true, "Owner name required"],
+    },
+    stars:{
+      type: Number,
+      required: [true, "Number of stars required"]
+    },
+    reviews:{
+      type: String,
+      required: [true, "Review required"]
+    },
   },
   {
     timestamps: true
   }
 );
- 
-module.exports = model('User', userSchema);
+
+module.exports = model('Restaurant', restaurantSchema);
