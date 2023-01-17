@@ -6,16 +6,6 @@ const restaurantSchema = new Schema(
       type: String,
       trim: true,
       required: [true, 'name is required.'],
-      unique: true
-    },
-    email: {
-      type: String,
-      required: [true, 'Email is required.'],
-      // this match will disqualify all the emails with accidental empty spaces, missing dots in front of (.)com and the ones with no domain at all
-      match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
-      unique: true,
-      lowercase: true,
-      trim: true
     },
     owner:{
       type: String,
@@ -28,6 +18,10 @@ const restaurantSchema = new Schema(
     reviews:{
       type: String,
       required: [true, "Review required"]
+    },
+    images:{
+      type: String,
+      required: true
     },
   },
   {
