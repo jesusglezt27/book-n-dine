@@ -115,6 +115,11 @@ router.post("/review",(req,res,next)=>{
     res.render("users/reviews-new")
   })
 })
+
+router.get("/resturant/:idRestaurant/detail",(req,res)=>{
+  
+  res.send(req.params)
+})
     
 router.get('/userProfile', (req, res) => {
   res.render('users/user-profile', { userInSession: req.session.currentUser });
