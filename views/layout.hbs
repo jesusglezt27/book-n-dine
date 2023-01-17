@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,12 +12,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-
   <body>
+
+    <!-- add the navbar code below -->
+  <nav>
+    <ul>
+      <li id="to-left">
+        <p><a href="/">BOOK-N-DINE</a></p>
+      </li>
+      <li id="to-right">
+        <a href="/signup">Signup</a> <span> | </span>
+        <a href="/login">Login</a> <span> | </span>
+        <form id="logout-form" action="/logout" method="POST">
+          <button>Logout</button> <span> | </span>
+        </form>
+ 
+        <a href="/userProfile">Profile</a>   {{!-- !!! --}}
+ 
+      </li>
+    </ul>
+  </nav>
 
     {{{body}}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/script.js"></script>
   </body>
+
+   <!-- ... -->
+
 
 </html>
