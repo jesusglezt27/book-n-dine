@@ -5,11 +5,46 @@ const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/book-n-dine';
 
 const restaurants = [
     {
-        name: "The Hunger Games",
-        email: "dylanbistro@gmail.com",
+        name: "La Moresca",
         owner: "Dylan Torres",
-        stars: 10,
-        reviews: "Not bad"
+        stars: 8.6,
+        reviews: "muy muy bueno",
+        images: "https://media-cdn.tripadvisor.com/media/photo-s/12/f2/eb/03/salon.jpg"
+    },
+    {
+        name: "Asador La Vaca Argentina",
+        owner: "Felipe Reyes",
+        stars: 8.8,
+        reviews: "podría mejorar",
+        images: "https://resizer.otstatic.com/v2/photos/wide-huge/1/25201504.jpg"
+    },
+    {
+        name: "Loló",
+        owner: "Gabriel Gutierrez",
+        stars: 7.7,
+        reviews: "excelente",
+        images: "https://www.lologdl.mx/img/big/LoloGaleria_03.jpg"
+    },
+    {
+        name: "Outback",
+        owner: "Luis Gonzalez",
+        stars: 7.7,
+        reviews: "muy bueno",
+        images: "https://www.lologdl.mx/img/big/LoloGaleria_03.jpg",
+    },
+    {
+        name: "Lupes BBQ",
+        owner: "Veronica Santos",
+        stars: 8.6,
+        reviews: "un poco caro",
+        images: "https://www.informador.mx/__export/1637346033966/sites/elinformador/img/2021/11/19/lupes_2_crop1637346033280.jpg_69363498.jpg",
+    },
+    {
+        name: "Campomar",
+        owner: "Emilio Cervantes",
+        stars: 8.4,
+        reviews: "Bastante bueno",
+        images: "https://www.campomar.mx/assets/img/sucursales/P.1.webp"
     },
 ];
 
@@ -18,7 +53,7 @@ mongoose
 .then(x => {
     console.log(`Connected to Mongo database: "${x.connections[0].name}"`);
 
-    return Restaurant.create(restaurants);
+    return Restaurant.insertMany(restaurants);
 })
 .then(restaurantFromDB => {
     console.log(`Created ${restaurantFromDB.length} restaurants`);
