@@ -11,6 +11,8 @@ const saltRounds = 10;
 
 const User = require('../models/User.model');
 const Review = require('../models/Reviews.model')
+const Restaurant = require('../models/Restaurant.model')
+const Reservation = require('../models/Reservation.model')
 
 
 // GET route ==> to display the signup form to users
@@ -105,21 +107,33 @@ router.get("/review",(req,res,next)=>{
   res.render("users/reviews-new")
 })
 
-router.post("/review",(req,res,next)=>{
-  const {opinion, _owner, _restaurant} = req.body
-  Review.create({opinion,_owner,_restaurant})
+router.post("/review/:idRestaurant",(req,res,next)=>{
+  const {opinion} = req.body
+  const {_id} = req.session.currentUser
+  const {idRestaurant} = req.params
+  Review.create({opinion,_owner:_id,_restaurant:idRestaurant})
   .then(review => {
-    res.json({review})
+    res.redirect(`/restaurant/${idRestaurant}/detail`)
   }).catch(error => {
     console.log(error)
     res.render("users/reviews-new")
   })
 })
 
-router.get("/resturant/:idRestaurant/detail",(req,res)=>{
-  
-  res.send(req.params)
+
+router.post("/reservation/:idRestaurant",(req,res,next)=>{
+  const {date} = req.body
+  const {_id} = req.session.currentUser
+  const {idRestaurant} = req.params
+  Reservation.create({date,_owner:_id,_restaurant:idRestaurant})
+  .then(review => {
+    res.redirect(`/restaurant/${idRestaurant}/detail`)
+  }).catch(error => {
+    console.log(error)
+    res.render("users/reviews-new")
+  })
 })
+
     
 router.get('/userProfile', (req, res) => {
   res.render('users/user-profile', { userInSession: req.session.currentUser });

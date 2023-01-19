@@ -30,7 +30,7 @@ const restaurants = [
         owner: "Luis Gonzalez",
         stars: 7.7,
         reviews: "muy bueno",
-        images: "https://www.lologdl.mx/img/big/LoloGaleria_03.jpg",
+        images: "https://media-cdn.tripadvisor.com/media/photo-s/0e/23/e8/dd/los-esperamos-en-centro.jpg",
     },
     {
         name: "Lupes BBQ",
@@ -45,6 +45,34 @@ const restaurants = [
         stars: 8.4,
         reviews: "Bastante bueno",
         images: "https://www.campomar.mx/assets/img/sucursales/P.1.webp"
+    },
+    { 
+        name: "P.F Chang`s", 
+        owner: "Sofia Verduzco", 
+        stars: 9.6, 
+        reviews: "muy caro",
+        images: "https://monchitime.com/www/wp-content/uploads/2021/05/CL3A5557-b.jpg"
+    }, 
+    { 
+        name: "La Pasteria", 
+        owner: "Roberto Lopez", 
+        stars: 8.3,  
+        reviews: "Excelente servicio", 
+        images: "https://guadalajaramidestino.com/wp-content/uploads/2018/04/85-LA-PASTERIA-PRINCIPAL.jpg"
+    }, 
+    { 
+        name: "La Docena", 
+        owner: "Fernando Sanchez", 
+        stars: 8.8, 
+        reviews: "muy buenos platillos", 
+        images: "https://www.theworlds50best.com/discovery/filestore/jpg/LaDocena-MexicoCity-Mexico-01.jpg"
+    }, 
+    { 
+        name: "Talento", 
+        owner: "Eduardo Gonzalez", 
+        stars: 9.2, 
+        reviews: "Excelente lugar!",
+        images: "https://resizer.otstatic.com/v2/photos/xlarge/4/42599015.jpg"
     },
 ];
 

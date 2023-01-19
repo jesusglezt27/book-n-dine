@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Restaurant = require('../models/Restaurant.model');
+const Review = require('../models/Reviews.model');
 
 /* GET home page */
 router.get("/", async (req, res, next) => {
@@ -12,11 +13,14 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/restaurant/:idrestaurant/detail", async (req, res, next) => {
+
+router.get("/restaurant/:idRestaurant/detail", async (req, res, next) => {
   try{
-    const {idrestaurant} = req.params 
-    const restaurant = await Restaurant.findById(idrestaurant)
-    res.render("restaurant/detail",{restaurant});
+    const {idRestaurant} = req.params
+const restaurant = await Restaurant.findById(idRestaurant)
+const reviews = await Review.find({_restaurant:idRestaurant})
+console.log('consolelog de reviews',reviews)
+res.render("restaurant/detail", {restaurant,reviews})
   }catch(error){
     next(error)
   }
