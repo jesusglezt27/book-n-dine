@@ -105,3 +105,73 @@ ul li {
 #logout-form button {
   width: 120px;
 }
+
+
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+}
+
+.col-sm-6 {
+  width: 50%;
+  padding: 0 10px;
+}
+
+
+
+nav {
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.nav-links a:hover {
+  background-color: #333;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}

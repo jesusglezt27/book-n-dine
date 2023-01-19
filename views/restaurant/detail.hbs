@@ -1,1 +1,38 @@
 <h1>{{restaurant.name}}</h1>
+<img src="{{restaurant.images}}" width="200" height="200" alt="">
+
+<form action="/reservation/{{restaurant._id}}" method="POST">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Fecha de la reservación</label>
+    <input name="date" type="date">
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+<form action="/review/{{restaurant._id}}" method="POST">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Reseña</label>
+    <textarea name="opinion" class="form-control" id="review" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+    </div>
+    {{#each reviews}}
+    <div class="col-sm-6">
+      <div class="card">
+        <img src="image.jpg" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Comments</h4>
+          <p class="card-text">{{opinion}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
