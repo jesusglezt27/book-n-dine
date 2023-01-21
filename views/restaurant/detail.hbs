@@ -3,8 +3,9 @@
 
 <form action="/reservation/{{restaurant._id}}" method="POST">
   <div class="form-group">
-    <label for="exampleInputPassword1">Fecha de la reservación</label>
+    <label for="exampleInputPassword1">Fecha y hora de la reservación</label>
     <input name="date" type="date">
+    <input name="time" type="time">
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
@@ -24,11 +25,10 @@
     {{#each reviews}}
     <div class="col-sm-6">
       <div class="card">
-        <img src="image.jpg" alt="Card image">
         <div class="card-body">
           <h4 class="card-title">Comments</h4>
           <p class="card-text">{{opinion}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-danger delete-review" data-review-id="{{review._id}}"> Borrar </a>
         </div>
       </div>
     </div>
@@ -36,3 +36,23 @@
   </div>
 </div>
 
+
+<script>
+  const deleteButtons = document.querySelectorAll(".delete-review");
+  deleteButtons.forEach(button => {
+    button.addEventListener("click", event => {
+      event.preventDefault();
+      const reviewId = button.dataset.reviewId;
+      fetch(`/review/${reviewId}`, { method: "DELETE" })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            button.parentElement.remove();
+          } else {
+          }
+        })
+        .catch(err => {
+        });
+    });
+  });
+</script>
