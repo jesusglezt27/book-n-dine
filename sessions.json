@@ -1,0 +1,17 @@
+[{
+  "_id": "Q0bvLWt7IxjLtt4ubONUdVtW8UOwIfgq",
+  "expires": {
+    "$date": {
+      "$numberLong": "1675387171573"
+    }
+  },
+  "session": "{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"currentUser\":{\"_id\":\"63c78507d6b073ddc8e36d29\",\"username\":\"homero\",\"email\":\"homerosimpson@gmail.com\",\"passwordHash\":\"$2a$10$AByknfyg2fP6R1ciRu3GL.VbakZhrIROTsogQe1cfOJuQoejWQoxy\",\"createdAt\":\"2023-01-18T05:35:03.236Z\",\"updatedAt\":\"2023-01-18T05:35:03.236Z\",\"__v\":0}}"
+},{
+  "_id": "Vs1perfVgE86HpnGN6ptHDgr4_90jN3V",
+  "expires": {
+    "$date": {
+      "$numberLong": "1675493191859"
+    }
+  },
+  "session": "{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"currentUser\":{\"_id\":\"63c78507d6b073ddc8e36d29\",\"username\":\"homero\",\"email\":\"homerosimpson@gmail.com\",\"passwordHash\":\"$2a$10$AByknfyg2fP6R1ciRu3GL.VbakZhrIROTsogQe1cfOJuQoejWQoxy\",\"createdAt\":\"2023-01-18T05:35:03.236Z\",\"updatedAt\":\"2023-01-18T05:35:03.236Z\",\"__v\":0}}"
+}]

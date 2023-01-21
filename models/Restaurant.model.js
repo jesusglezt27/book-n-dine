@@ -23,6 +23,10 @@ const restaurantSchema = new Schema(
       type: String,
       required: true
     },
+    descriptions:{
+      type: String,
+      required: false
+    },
   },
   {
     timestamps: true

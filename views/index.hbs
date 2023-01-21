@@ -1,13 +1,118 @@
 
-<ul> 
-    {{#each restaurants}}
-    <div class="card">
-        <img src="{{restaurant.images}}" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">{{name}}</h4>
-            <p class="card-text">{{description}}</p>
-            <a href="/restaurant/{{_id}}/detail" class="btn btn-primary">Ver más</a>
-        </div>
+<nav>
+  <div class="nav-container">
+    <a href="/" class="brand">BOOK-N-DINE</a>
+    <div class="nav-links">
+      <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
+      <a href="/profile">Profile</a>
     </div>
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<head>
+  <style>
+    h1 {
+      font-size: 36px;
+      color: rgb(227, 103, 37);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+Book-n dine </h1>
+
+<head>
+  <style>
+    h5 {
+      font-size: 36px;
+      color: rgba(56, 55, 57, 0.918);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h5>
+Reserva en Restaurante
+</h1>
+
+
+   <!--   Icon Section   -->
+            
+
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h5 class="center">Evitan largas filas</h5>
+
+          
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h5 class="center">Leen reseñas y comentarios</h5>
+</div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h5 class="center">Evitan la molestia de llamar</h5>
+
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+   <div class="row">
+     {{#each restaurants}}
+    
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{images}}""width="200" height="200" alt="Card image"/>
+          <span class="card-title">{{name}}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" href="/restaurant/{{_id}}/detail"><i class="material-icons">expand_more</i></a>
+        </div>
+        <div class="card-content">
+          <p>{{this.Contador}}</p>
+
+        </div>
+      </div>
+    </div>
+  
     {{/each}}
-</ul>
+</div>
+
+
+
+
+
+
+<footer class="page-footer teal">
+  <div class="container">
+    <div class="row">
+      <div class="col l0 s12 center">
+       
+
+
+     <h4>Restauranteros,
+Súmate a los restaurantes que ocupan todas sus mesas y administran las reservaciones con Book-n Dine.</h4>
+     
+  
+
+
+

@@ -1,5 +1,5 @@
 <h1>{{restaurant.name}}</h1>
-<img src="{{restaurant.images}}" width="200" height="200" alt="">
+<img src="{{restaurant.images}}" width="300" height="200" alt="">
 
 <form action="/reservation/{{restaurant._id}}" method="POST">
   <div class="form-group">
@@ -38,7 +38,7 @@
 
 
 <script>
-  const deleteButtons = document.querySelectorAll(".delete-review");
+  const deleteButtons = document.querySelectorAll("delete-review");
   deleteButtons.forEach(button => {
     button.addEventListener("click", event => {
       event.preventDefault();
