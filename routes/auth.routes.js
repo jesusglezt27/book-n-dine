@@ -122,7 +122,7 @@ router.post("/review/:idRestaurant",(req,res,next)=>{
 })
 
 router.delete("/review/:id", (req, res, next) => {
-  const reviewId = req.params.id;
+  const reviewId = req.Review.currentUser;
 Review.findByIdAndRemove(reviewId)
   .then(review => {
     res.redirect(`/restaurant/${review._restaurant}/detail`);
