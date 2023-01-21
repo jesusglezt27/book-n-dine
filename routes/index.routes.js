@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Restaurant = require('../models/Restaurant.model');
 const Review = require('../models/Reviews.model');
-
 /* GET home page */
 router.get("/", async (req, res, next) => {
   try{
+    
     const restaurants = await Restaurant.find()
     res.render("index",{restaurants});
   }catch(error){

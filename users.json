@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "63c78507d6b073ddc8e36d29"
+  },
+  "username": "homero",
+  "email": "homerosimpson@gmail.com",
+  "passwordHash": "$2a$10$AByknfyg2fP6R1ciRu3GL.VbakZhrIROTsogQe1cfOJuQoejWQoxy",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674020103236"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674020103236"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "63ca417bb047f0d5737c43b8"
+  },
+  "_owner": {
+    "$oid": "63c78507d6b073ddc8e36d29"
+  },
+  "_restaurant": {
+    "$oid": "63c87584a987148b1e7ef552"
+  },
+  "date": {
+    "$date": {
+      "$numberLong": "1674691200000"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674199419329"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674199419329"
+    }
+  },
+  "__v": 0
+}]
