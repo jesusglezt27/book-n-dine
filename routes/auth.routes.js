@@ -12,11 +12,12 @@ const saltRounds = 10;
 const User = require('../models/User.model');
 const Review = require('../models/Reviews.model')
 const Restaurant = require('../models/Restaurant.model')
-const Reservation = require('../models/Reservation.model')
+const Reservation = require('../models/Reservation.model');
+const moment = require("moment")
 
 
 // GET route ==> to display the signup form to users
-router.get('/signup', (req, res) => res.render('auth/signup'))
+router.get('/signup', isLoggedOut,(req, res) => res.render('auth/signup'))
 
 
 // POST route ==> to process form data
@@ -63,7 +64,7 @@ router.post('/signup', (req, res, next) => {
         }); // close .catch()
     })
 
-router.get('/login', (req, res) => res.render('auth/login'));
+router.get('/login', isLoggedOut,(req, res) => res.render('auth/login'));
 
 router.post('/login', (req, res, next) => {
   console.log('SESSION =====> ', req.session);
@@ -120,23 +121,50 @@ router.post("/review/:idRestaurant",(req,res,next)=>{
   })
 })
 
+router.delete("/review/:id", (req, res, next) => {
+  const reviewId = req.Review.currentUser;
+Review.findByIdAndRemove(reviewId)
+  .then(review => {
+    res.redirect(`/restaurant/${review._restaurant}/detail`);
+  })
+  .catch(error => {
+    next(error);
+  });
+});
+
+
 
 router.post("/reservation/:idRestaurant",(req,res,next)=>{
-  const {date} = req.body
+  const {date,time} = req.body
+  console.log("tiempo", req.body)
   const {_id} = req.session.currentUser
   const {idRestaurant} = req.params
-  Reservation.create({date,_owner:_id,_restaurant:idRestaurant})
+  Reservation.create({date,_owner:_id,_restaurant:idRestaurant,time})
   .then(review => {
-    res.redirect(`/restaurant/${idRestaurant}/detail`)
+        res.redirect(`/userProfile`);
   }).catch(error => {
-    console.log(error)
+    console.log("un texto jeje", error, req.body)
     res.render("users/reviews-new")
   })
 })
 
-    
-router.get('/userProfile', (req, res) => {
-  res.render('users/user-profile', { userInSession: req.session.currentUser });
-});
+
+router.get('/userProfile',async(req, res,next) => {
+  try{
+    const user = req.session.currentUser
+    const reservation = await Reservation.find({_owner:user._id})
+    const newReservations = reservation.map((item)=>{
+      const newItem = item.toObject()
+      return ({...newItem,date:moment(item.date).format("DD/MM/YYYY")})
+    })
+    res.render('users/user-profile',{user,reservation:newReservations})
+}catch(error){
+    next(error)
+}
+})
+
+
+
+
 
 module.exports = router;

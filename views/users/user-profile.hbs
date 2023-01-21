@@ -1,11 +1,11 @@
-{{#if userInSession}}
-  <h2>Welcome, {{ userInSession.username }}!</h2>
-  <p>This is your profile page my friend!</p>
-  <button>
-    <a href="/userProfile">Reload the page</a>
-  </button>
-{{else}}
-  
-  <br><p>Still no logged in user, sorry!</p>
- 
-{{/if}}
+  <h2>Welcome, {{ user.username }}!</h2>
+
+{{#each reservation}}
+{{>reservationDate this}}
+{{/each}}
+
+
+    <form id="logout-form" action="/logout" method="POST">
+    <button>Logout</button>
+  </form>    
+
